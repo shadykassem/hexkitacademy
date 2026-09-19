@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="icon-learn">
+  <g fill="none" stroke="#1A1D21" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+    <polygon points="27.5,22.5 16,29 4.5,22.5 4.5,9.5 16,3 27.5,9.5"/>
+    <!-- open book / badge panel -->
+    <path d="M10.5 11.5 V21.5 L16 19.8 L21.5 21.5 V11.5 L16 10 Z"/>
+    <line x1="16" y1="10.2" x2="16" y2="19.8"/>
+    <line x1="12.2" y1="14" x2="14.5" y2="13.4"/>
+    <line x1="12.2" y1="16.2" x2="14.5" y2="15.6"/>
+    <line x1="17.5" y1="13.4" x2="19.8" y2="14"/>
+    <line x1="17.5" y1="15.6" x2="19.8" y2="16.2"/>
+  </g>
+</svg>

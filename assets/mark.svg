@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="HEXKIT ACADEMY">
+  <g id="hexbolt-mark">
+    <polygon points="89.837,73.000 50.000,96.000 10.163,73.000 10.163,27.000 50.000,4.000 89.837,27.000" fill="#1A1D21"/>
+    <circle cx="50.000" cy="50.000" r="30.000" fill="#F4F5F0"/>
+    <polygon points="64.722,58.500 50.000,67.000 35.278,58.500 35.278,41.500 50.000,33.000 64.722,41.500" fill="#1A1D21"/>
+    <polygon points="56.062,53.500 50.000,57.000 43.938,53.500 43.938,46.500 50.000,43.000 56.062,46.500" fill="#B8F000"/>
+    <polygon points="70.785,62.000 50.000,74.000 29.215,62.000 29.215,38.000 50.000,26.000 70.785,38.000" fill="none" stroke="#1A1D21" stroke-width="1.2" opacity="0.25"/>
+  </g>
+</svg>

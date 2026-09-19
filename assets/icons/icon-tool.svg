@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="icon-tool">
+  <g fill="none" stroke="#1A1D21" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+    <polygon points="27.5,22.5 16,29 4.5,22.5 4.5,9.5 16,3 27.5,9.5"/>
+    <!-- hex bit / allen key geometry -->
+    <polygon points="18.5,12.5 16,14 13.5,12.5 13.5,9.5 16,8 18.5,9.5" fill="#1A1D21" stroke="none"/>
+    <line x1="16" y1="14" x2="16" y2="20.5"/>
+    <path d="M16 20.5 L20.5 23"/>
+  </g>
+</svg>

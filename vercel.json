@@ -1,0 +1,26 @@
+{
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "hexkitacademy.tech"
+        }
+      ],
+      "destination": "https://hexkitacademy.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.hexkitacademy.tech"
+        }
+      ],
+      "destination": "https://hexkitacademy.com/:path*",
+      "permanent": true
+    }
+  ]
+}
