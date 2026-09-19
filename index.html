@@ -24,6 +24,7 @@
       </a>
       <nav class="nav" aria-label="Primary">
         <a href="#workshops">Workshops</a>
+        <a href="#intro">Intro</a>
         <a href="#curriculum">Curriculum</a>
         <a href="#faq">FAQ</a>
         <a class="nav-cta" href="#waitlist">Join waitlist</a>
@@ -68,8 +69,7 @@
         <p class="eyebrow">Coming soon</p>
         <h2>Weekend workshops coming soon</h2>
         <p class="section-lede">
-          We’re lining up weekend sessions with partner hosts in Orange County and Irvine.
-          No dates or prices published yet—join the waitlist and we’ll reach out when seats open.
+          We’re lining up weekend sessions with partner hosts in Orange County and Irvine. Join the waitlist and we’ll reach out when seats open.
         </p>
         <div class="partner-card">
           <h3>Partner hosts</h3>
@@ -79,6 +79,38 @@
             Exact schedules will be shared with waitlist members first.
           </p>
           <a class="btn btn-primary" href="#waitlist">Get notified</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAID INTRO -->
+    <section id="intro" class="section paid-seat section-alt">
+      <div class="wrap">
+        <p class="eyebrow">First workshop</p>
+        <h2>Industrial Cobot Intro</h2>
+        <p class="section-lede">
+          A focused hands-on introduction for students who want to work with real collaborative robots.
+        </p>
+        <div class="paid-seat-card">
+          <div class="paid-seat-details">
+            <div>
+              <span class="paid-seat-label">Seats</span>
+              <strong>6 students</strong>
+            </div>
+            <div>
+              <span class="paid-seat-label">Price</span>
+              <strong>$149</strong>
+            </div>
+          </div>
+          <p class="paid-seat-note">
+            Completing the workshop waiver via e-sign is required before or at payment confirmation.
+          </p>
+          <div class="paid-seat-actions">
+            <!-- Alex: replace href="#" with a real https://buy.stripe.com/... URL when ready. STRIPE_PAYMENT_LINK_REPLACE_ME -->
+            <a class="btn btn-primary btn-disabled" href="#" aria-disabled="true" tabindex="-1">Pay $149 with Stripe (coming soon)</a>
+            <!-- Alex: replace href="#" with the Dropbox Sign / HelloSign URL when ready. WAIVER_LINK_REPLACE_ME -->
+            <a class="btn btn-secondary btn-disabled" href="#" aria-disabled="true" tabindex="-1">Complete waiver (link coming soon)</a>
+          </div>
         </div>
       </div>
     </section>
@@ -156,6 +188,7 @@
       <div class="wrap waitlist-inner">
         <p class="eyebrow">Soft waitlist</p>
         <h2>Join the waitlist</h2>
+        <p class="form-note">Waitlist interest only; a full workshop waiver comes later via e-sign before any paid seat.</p>
         <p class="section-lede">
           Tell us a bit about your student. We’ll notify you when weekend workshops open.
           No purchase required to join.
@@ -173,22 +206,40 @@
           method="POST"
         >
           <div class="field">
-            <label for="name">Name</label>
-            <input id="name" name="name" type="text" autocomplete="name" required placeholder="Your name" />
+            <label for="parent-name">Parent/guardian full name</label>
+            <input id="parent-name" name="parent_name" type="text" autocomplete="name" required placeholder="Your full name" />
           </div>
           <div class="field">
-            <label for="email">Email</label>
-            <input id="email" name="email" type="email" autocomplete="email" required placeholder="you@example.com" />
+            <label for="parent-email">Parent email</label>
+            <input id="parent-email" name="parent_email" type="email" autocomplete="email" required placeholder="you@example.com" />
           </div>
           <div class="field">
-            <label for="grade">Grade band</label>
-            <select id="grade" name="grade" required>
+            <label for="parent-phone">Parent phone</label>
+            <input id="parent-phone" name="parent_phone" type="tel" autocomplete="tel" required placeholder="(555) 555-5555" />
+          </div>
+          <div class="field">
+            <label for="kid-first-name">Kid first name only</label>
+            <input id="kid-first-name" name="kid_first_name" type="text" autocomplete="given-name" required placeholder="Student first name" />
+          </div>
+          <div class="field">
+            <label for="age-band">Age band</label>
+            <select id="age-band" name="age_band" required>
               <option value="" disabled selected>Select one</option>
-              <option value="middle">Middle school</option>
-              <option value="high">High school</option>
-              <option value="parent">Parent / guardian</option>
-              <option value="other">Other / educator</option>
+              <option value="middle-school">Middle school</option>
+              <option value="high-school">High school</option>
             </select>
+          </div>
+          <div class="checkbox-field">
+            <input id="guardian-confirmation" name="guardian_confirmation" type="checkbox" value="yes" required />
+            <label for="guardian-confirmation">I am the parent or legal guardian of the student named above.</label>
+          </div>
+          <div class="checkbox-field">
+            <input id="contact-consent" name="contact_consent" type="checkbox" value="yes" required />
+            <label for="contact-consent">I agree that Hexkit Academy (hexkitacademy.com) may contact me about workshops. Hexkit Academy does not sell my information.</label>
+          </div>
+          <div class="checkbox-field">
+            <input id="media-interest" name="media_conversation_interest" type="checkbox" value="yes" />
+            <label for="media-interest">I’m interested in discussing photo/media consent later <span class="optional">(this is not a photo release).</span></label>
           </div>
           <div class="field">
             <label for="note">Note <span class="optional">(optional)</span></label>
