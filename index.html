@@ -103,13 +103,27 @@
             </div>
           </div>
           <p class="paid-seat-note">
-            Completing the workshop waiver via e-sign is required before or at payment confirmation.
+            Complete the waiver first, then pay. E-sign confirmation is required before payment.
           </p>
-          <div class="paid-seat-actions">
-            <!-- Alex: replace href="#" with a real https://buy.stripe.com/... URL when ready. STRIPE_PAYMENT_LINK_REPLACE_ME -->
-            <a class="btn btn-primary btn-disabled" href="#" aria-disabled="true" tabindex="-1">Pay $149 with Stripe (coming soon)</a>
-            <!-- Alex: replace href="#" with the Dropbox Sign / HelloSign URL when ready. WAIVER_LINK_REPLACE_ME -->
-            <a class="btn btn-secondary btn-disabled" href="#" aria-disabled="true" tabindex="-1">Complete waiver (link coming soon)</a>
+          <div class="paid-seat-actions" aria-label="Checkout steps">
+            <div class="checkout-step">
+              <span class="checkout-step-number" aria-hidden="true">1</span>
+              <div class="checkout-step-copy">
+                <strong>Complete waiver</strong>
+                <!-- REPLACE_ME: Alex, paste the Dropbox Sign / DocuSign / HelloSign signing URL into both href and data-waiver-url. -->
+                <a class="btn btn-primary" href="#" data-waiver-url="WAIVER_LINK_REPLACE_ME">Complete waiver</a>
+                <p class="checkout-step-note">Sign online first, then return here to pay.</p>
+              </div>
+            </div>
+            <div class="checkout-step">
+              <span class="checkout-step-number" aria-hidden="true">2</span>
+              <div class="checkout-step-copy">
+                <strong>Pay $149</strong>
+                <!-- REPLACE_ME: Alex, paste the Stripe Payment Link into both href and data-stripe-payment-link after the waiver link is live. -->
+                <a class="btn btn-secondary btn-disabled" href="#" data-stripe-payment-link="STRIPE_PAYMENT_LINK_REPLACE_ME" aria-disabled="true" tabindex="-1">Pay $149</a>
+                <p class="checkout-step-note">Complete the waiver first, then pay with Stripe.</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
