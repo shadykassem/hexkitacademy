@@ -1,4 +1,4 @@
-/* HEXKIT ACADEMY — Hexbolt palette, mobile-first */
+/* HEXKIT ACADEMY | Hexbolt palette, mobile-first */
 :root {
   --charcoal: #1A1D21;
   --lime: #B8F000;
@@ -272,10 +272,11 @@ a:hover {
 
 /* Paid intro */
 .paid-seat .wrap {
-  max-width: var(--max);
+  max-width: min(var(--max), 100%);
 }
 
 .paid-seat-card {
+  max-width: 40rem;
   background: var(--charcoal);
   color: var(--offwhite);
   border-radius: var(--radius);
@@ -648,6 +649,120 @@ a:hover {
   text-decoration: underline;
 }
 
+
+/* Value stack */
+.value-stack {
+  display: grid;
+  gap: 0.65rem;
+  margin-bottom: 1.25rem;
+  padding-bottom: 1.15rem;
+  border-bottom: 1px solid rgba(244, 245, 240, 0.15);
+}
+
+.value-stack-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: 0.95rem;
+  color: rgba(244, 245, 240, 0.78);
+}
+
+.value-stack-row strong {
+  font-size: 1.15rem;
+  color: var(--offwhite);
+}
+
+.value-was {
+  text-decoration: line-through;
+  color: rgba(244, 245, 240, 0.55) !important;
+  font-weight: 600 !important;
+}
+
+.value-early {
+  color: var(--lime) !important;
+}
+
+.pay-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  flex: 1 0 100%;
+}
+
+/* Compare */
+.compare-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 640px) {
+  .compare-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.compare-card {
+  background: var(--offwhite);
+  border: 1px solid rgba(26, 29, 33, 0.08);
+  border-radius: var(--radius);
+  padding: 1.35rem 1.4rem;
+  box-shadow: var(--shadow);
+}
+
+.compare-card-accent {
+  background: var(--charcoal);
+  color: var(--offwhite);
+  border-color: transparent;
+}
+
+.compare-card h3 {
+  margin: 0 0 0.35rem;
+  font-size: 1.1rem;
+  font-weight: 800;
+}
+
+.compare-price {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--charcoal);
+}
+
+.compare-card-accent .compare-price {
+  color: var(--lime);
+}
+
+.compare-meta {
+  margin: 0.15rem 0 1rem;
+  font-size: 0.85rem;
+  color: var(--mid);
+}
+
+.compare-card-accent .compare-meta {
+  color: rgba(244, 245, 240, 0.65);
+}
+
+.compare-card ul {
+  margin: 0;
+  padding-left: 1.15rem;
+  color: var(--mid);
+  font-size: 0.95rem;
+}
+
+.compare-card-accent ul {
+  color: rgba(244, 245, 240, 0.85);
+}
+
+.compare-card li + li {
+  margin-top: 0.4rem;
+}
+
+.usp-grid .card h3 {
+  font-size: 1rem;
+}
+
 /* Focus visible for a11y */
 :focus-visible {
   outline: 2px solid var(--lime);
@@ -656,4 +771,99 @@ a:hover {
 
 button:focus-visible {
   outline-offset: 3px;
+}
+
+/* Value + pricing + compare */
+.value-banner {
+  background: rgba(184, 240, 0, 0.18);
+  border: 1px solid rgba(26, 29, 33, 0.1);
+  border-radius: var(--radius);
+  padding: 1rem 1.25rem;
+  margin: 0 0 1.25rem;
+}
+.value-was {
+  margin: 0 0 0.35rem;
+  font-size: 1.05rem;
+}
+.value-copy {
+  margin: 0;
+  color: var(--mid);
+  font-size: 0.95rem;
+}
+.price-grid {
+  display: grid;
+  gap: 0.85rem;
+  margin: 0 0 1.5rem;
+}
+@media (min-width: 720px) {
+  .price-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.price-card {
+  background: var(--white);
+  border: 1px solid rgba(26, 29, 33, 0.1);
+  border-radius: var(--radius);
+  padding: 1.15rem 1.25rem;
+  box-shadow: var(--shadow);
+}
+.price-card-featured {
+  border-color: var(--lime);
+  box-shadow: 0 0 0 2px rgba(184, 240, 0, 0.35), var(--shadow);
+}
+.price-eyebrow {
+  margin: 0;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--mid);
+}
+.price-amount {
+  margin: 0.25rem 0 0.4rem;
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+.price-note {
+  margin: 0;
+  color: var(--mid);
+  font-size: 0.9rem;
+}
+.compare-table-wrap {
+  overflow-x: auto;
+  border-radius: var(--radius);
+  border: 1px solid rgba(26, 29, 33, 0.1);
+  background: var(--white);
+  box-shadow: var(--shadow);
+}
+.compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+.compare-table th,
+.compare-table td {
+  padding: 0.85rem 1rem;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid rgba(26, 29, 33, 0.08);
+}
+.compare-table thead th {
+  background: var(--charcoal);
+  color: var(--offwhite);
+  font-weight: 700;
+}
+.compare-table tbody th {
+  font-weight: 700;
+  width: 22%;
+  color: var(--charcoal);
+}
+.compare-table tbody tr:last-child th,
+.compare-table tbody tr:last-child td {
+  border-bottom: none;
+}
+.compare-table tbody td:last-child {
+  background: rgba(184, 240, 0, 0.12);
+  font-weight: 560;
 }
