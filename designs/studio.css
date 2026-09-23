@@ -1,4 +1,4 @@
-/* HEXKIT ACADEMY Variant A: Studio / editorial. Preview only. */
+/* HEXKIT ACADEMY Studio layout. Used by the live homepage and the Studio preview. */
 :root {
   --ink: #1a1d21;
   --lime: #b8f000;
@@ -60,6 +60,28 @@ a {
 .wrap-wide {
   width: min(100% - 1.25rem, 1280px);
   margin-inline: auto;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--lime);
+  color: var(--ink);
+  padding: 0.5rem 1rem;
+  z-index: 200;
+  font-weight: 700;
+}
+
+.skip-link:focus {
+  left: 0.5rem;
+  top: 0.5rem;
+}
+
+.sticky-stack {
+  position: sticky;
+  top: 0;
+  z-index: 80;
 }
 
 .site-header {
@@ -583,6 +605,89 @@ button.chapter[aria-pressed="true"] {
   font-size: 0.85rem;
 }
 
+.family-calc {
+  display: grid;
+  gap: 1rem 1.5rem;
+  background: var(--white);
+  border: 1px solid var(--line);
+  padding: 1.1rem 1.15rem 1.25rem;
+  margin-bottom: 1.25rem;
+  box-shadow: 0 10px 30px rgba(26, 29, 33, 0.06);
+}
+
+.family-calc h3 {
+  margin: 0 0 0.35rem;
+  font-family: var(--serif);
+  font-size: 1.7rem;
+  font-weight: 560;
+}
+
+.family-calc .fine,
+.calc-note {
+  margin: 0.35rem 0 0.8rem;
+  color: var(--mid);
+  font-size: 0.9rem;
+}
+
+.seg {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.seg + .seg {
+  margin-top: 0.55rem;
+}
+
+.seg button {
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  min-height: 42px;
+  padding: 0.4rem 0.9rem;
+}
+
+.seg button[aria-pressed="true"] {
+  background: var(--lime);
+  border-color: var(--lime);
+  color: var(--ink);
+}
+
+.calc-readout {
+  display: grid;
+  gap: 0.15rem;
+  margin: 0;
+}
+
+.calc-readout div {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  border-bottom: 1px solid var(--line);
+  padding: 0.55rem 0;
+}
+
+.calc-readout dt {
+  color: var(--mid);
+}
+
+.calc-readout dd {
+  margin: 0;
+  font-weight: 700;
+  text-align: right;
+}
+
+.calc-readout .total dd {
+  font-family: var(--serif);
+  font-size: 2rem;
+  font-weight: 560;
+  color: var(--ink);
+}
+
 .price-layout {
   display: grid;
   gap: 1.25rem;
@@ -891,6 +996,7 @@ textarea {
   .compare-grid,
   .curr-grid,
   .price-layout,
+  .family-calc,
   .partner,
   .waitlist-grid {
     grid-template-columns: 1fr 1fr;

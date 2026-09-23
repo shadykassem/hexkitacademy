@@ -1,4 +1,4 @@
-/* Studio preview: cobot chapter jumps, photo compare, section highlight. */
+/* Studio page: cobot chapter jumps, family price calculator, photo compare, section highlight. */
 (function () {
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   var ba = document.querySelector("[data-compare]");
@@ -78,6 +78,57 @@
       var play = video.play();
       if (play && play.catch) play.catch(function () {});
     }
+  }
+
+  var calc = document.querySelector("[data-calculator]");
+  if (calc) {
+    var EARLY = 339;
+    var REGULAR = 449;
+    var SIBLING_OFF = 50;
+    var tier = "early";
+    var students = 1;
+    var tierButtons = calc.querySelectorAll("[data-tier]");
+    var studentButtons = calc.querySelectorAll("[data-students]");
+    var out = {
+      tier: calc.querySelector("[data-out='tier']"),
+      s1: calc.querySelector("[data-out='s1']"),
+      s2: calc.querySelector("[data-out='s2']"),
+      total: calc.querySelector("[data-out='total']"),
+      row: calc.querySelector("[data-row='s2']")
+    };
+
+    var renderCalc = function () {
+      var base = tier === "early" ? EARLY : REGULAR;
+      var second = base - SIBLING_OFF;
+      var total = students === 2 ? base + second : base;
+      out.tier.textContent = tier === "early" ? "Early bird $" + EARLY : "Regular $" + REGULAR;
+      out.s1.textContent = "$" + base;
+      out.s2.textContent = "$" + base + " minus $" + SIBLING_OFF + " = $" + second;
+      out.total.textContent = "$" + total;
+      out.row.hidden = students !== 2;
+    };
+
+    tierButtons.forEach(function (button) {
+      button.addEventListener("click", function () {
+        tier = button.getAttribute("data-tier");
+        tierButtons.forEach(function (item) {
+          item.setAttribute("aria-pressed", item === button ? "true" : "false");
+        });
+        renderCalc();
+      });
+    });
+
+    studentButtons.forEach(function (button) {
+      button.addEventListener("click", function () {
+        students = Number(button.getAttribute("data-students"));
+        studentButtons.forEach(function (item) {
+          item.setAttribute("aria-pressed", item === button ? "true" : "false");
+        });
+        renderCalc();
+      });
+    });
+
+    renderCalc();
   }
 
   var links = Array.prototype.slice.call(document.querySelectorAll(".mini-nav a"));
