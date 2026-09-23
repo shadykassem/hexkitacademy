@@ -1,0 +1,66 @@
+/* Shared chrome for HEXKIT ACADEMY design previews. Not used by the live homepage. */
+:root {
+  --charcoal: #1a1d21;
+  --lime: #b8f000;
+  --offwhite: #f4f5f0;
+  --mid: #5c6370;
+  --banner-font: "Inter", system-ui, sans-serif;
+}
+
+.preview-banner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.35rem 1rem;
+  padding: 0.45rem 1rem;
+  background: var(--lime);
+  color: var(--charcoal);
+  font-family: var(--banner-font);
+  font-size: 0.78rem;
+  line-height: 1.35;
+  font-weight: 600;
+}
+
+.preview-banner p {
+  margin: 0;
+}
+
+.preview-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.85rem;
+}
+
+.preview-banner a {
+  color: var(--charcoal);
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.preview-banner a:hover {
+  text-decoration-thickness: 2px;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--lime);
+  color: var(--charcoal);
+  padding: 0.5rem 1rem;
+  z-index: 200;
+  font-weight: 700;
+}
+
+.skip-link:focus {
+  left: 0.5rem;
+  top: 0.5rem;
+}
+
+.sticky-stack {
+  position: sticky;
+  top: 0;
+  z-index: 80;
+}
