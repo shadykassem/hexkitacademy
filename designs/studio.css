@@ -117,18 +117,22 @@ a {
 
 .hero-media {
   position: relative;
-  height: min(78vh, 760px);
-  min-height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   overflow: hidden;
-  background: var(--ink);
+  background: #f7f7f5;
 }
 
 .hero-media img {
-  width: 100%;
-  height: 120%;
-  object-fit: cover;
-  object-position: center 46%;
-  transform: scale(1.08);
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: min(100%, 1080px);
+  max-height: min(86vh, 920px);
+  object-fit: contain;
+  object-position: center;
+  transform: none;
 }
 
 .hero-caption {
@@ -147,7 +151,7 @@ a {
 
 .hero-copy {
   width: min(100% - 2rem, 920px);
-  margin: -3.2rem auto 0;
+  margin: 1rem auto 0;
   position: relative;
   background: var(--white);
   padding: 1.4rem 1.15rem 1.5rem;
@@ -299,13 +303,27 @@ h1 {
   color: var(--mid);
 }
 
-.mosaic .frame-a img {
-  aspect-ratio: 4 / 5;
+.mosaic .frame-a img.fit-robot,
+.mosaic .frame-b img.fit-robot {
+  aspect-ratio: 9 / 16;
+  object-fit: contain;
+  height: auto;
+  background: #e6e7e2;
 }
 
-.mosaic .frame-b img,
 .mosaic .frame-c img {
   aspect-ratio: 5 / 4;
+  object-fit: cover;
+  object-position: center 30%;
+}
+
+img.fit-robot {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 9 / 16;
+  object-fit: contain;
+  object-position: center;
+  background: #e6e7e2;
 }
 
 .why-copy {
@@ -326,60 +344,91 @@ h1 {
   color: var(--mid);
 }
 
-.day-head {
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-  align-items: end;
+.motion {
+  display: grid;
+  gap: 0.9rem;
+  align-items: start;
 }
 
-.hint {
+.motion-player {
   margin: 0;
-  font-size: 0.8rem;
+  background: #e6e7e2;
+  padding: 0.45rem 0.45rem 0.7rem;
+  box-shadow: 0 10px 30px rgba(26, 29, 33, 0.08);
+}
+
+.motion-player video {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: min(78vh, 760px);
+  aspect-ratio: 9 / 16;
+  object-fit: contain;
+  background: #dfe1dc;
+}
+
+.motion-player figcaption {
+  margin: 0.45rem 0.15rem 0;
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
   color: var(--mid);
 }
 
-@media (min-width: 1100px) {
-  .hint {
-    display: none;
-  }
+.chapter-list {
+  display: grid;
+  gap: 0.65rem;
 }
 
-.day-strip {
-  display: flex;
-  gap: 0.75rem;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  padding: 0.3rem 0 0.8rem;
-}
-
-.day-strip figure {
-  flex: 0 0 min(78vw, 280px);
-  scroll-snap-align: start;
+.chapter {
   margin: 0;
+  text-align: left;
+  background: var(--white);
+  border: 1px solid var(--line);
+  color: inherit;
+  font: inherit;
+  box-shadow: 0 8px 24px rgba(26, 29, 33, 0.06);
 }
 
-.day-strip img {
-  aspect-ratio: 3 / 4;
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-}
-
-.day-strip figcaption strong {
+button.chapter {
   display: block;
-  margin-top: 0.55rem;
+  width: 100%;
+  padding: 0.8rem 0.9rem;
+  cursor: pointer;
+}
+
+.chapter strong {
+  display: block;
   font-family: var(--serif);
-  font-size: 1.2rem;
+  font-size: 1.35rem;
   font-weight: 560;
   color: var(--ink);
 }
 
-.day-strip figcaption span {
+.chapter span {
   display: block;
   margin-top: 0.2rem;
   color: var(--mid);
-  font-size: 0.85rem;
+  font-size: 0.88rem;
+}
+
+button.chapter[aria-pressed="true"] {
+  border-color: var(--ink);
+  box-shadow: inset 4px 0 0 var(--lime);
+}
+
+.chapter-students {
+  padding: 0.45rem 0.45rem 0.75rem;
+}
+
+.chapter-students img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: center 28%;
+}
+
+.chapter-students figcaption {
+  margin: 0.5rem 0.2rem 0;
 }
 
 .compare-grid,
@@ -458,6 +507,8 @@ h1 {
 
 .ba-after {
   z-index: 0;
+  object-fit: contain;
+  background: #f4f5f0;
 }
 
 .ba-before {
@@ -805,7 +856,7 @@ textarea {
 
   .hero-copy {
     padding: 2rem 2.2rem 2.1rem;
-    margin-top: -4.5rem;
+    margin-top: 1.25rem;
   }
 
   .mosaic {
@@ -849,8 +900,8 @@ textarea {
     aspect-ratio: 16 / 8;
   }
 
-  .day-strip figure {
-    flex-basis: 240px;
+  .motion {
+    grid-template-columns: minmax(240px, 380px) minmax(0, 1fr);
   }
 }
 
@@ -865,8 +916,23 @@ textarea {
     scroll-behavior: auto;
   }
 
-  .hero-media img {
+  .hero-media img,
+  .motion-player video {
     transform: none;
-    height: 100%;
   }
+}
+
+.frame img.fit-robot,
+.partner img.fit-robot,
+.compare-card img.fit-robot,
+.curr-grid img.fit-robot,
+.price-layout .frame img.fit-robot,
+.mosaic .frame-a img.fit-robot,
+.mosaic .frame-b img.fit-robot {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 9 / 16;
+  object-fit: contain;
+  object-position: center;
+  background: #e6e7e2;
 }

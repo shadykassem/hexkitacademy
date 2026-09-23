@@ -18,8 +18,9 @@
   <!--
     HEXKIT ACADEMY design preview. Variant A, Studio.
     Not the live homepage.
-    Cobot photos are local files in /assets/photos/ (unedited hero and demo stills).
-    Student and makerspace photos are free stock. Search for "Alex:" to swap those for consented workshop photos.
+    Cobot hero is /assets/photos/cobot-hero.jpg (unedited, logos visible).
+    Day-strip motion is /assets/video/cobot-demo.mp4 (local file, not a hotlink).
+    Student photos are free stock meant to read as ages 13-16 only. Search for "Alex:" to swap those for consented workshop photos.
   -->
   <a class="skip-link" href="#main">Skip to content</a>
   <div class="sticky-stack">
@@ -75,17 +76,17 @@
         </div>
         <div class="mosaic">
           <figure class="frame frame-a">
-            <img src="/assets/photos/frame-01.jpg" alt="HEXKIT ACADEMY cobot standing on a grooved metal table, from the demo video." width="720" height="1280" />
-            <figcaption>Demo still. The cobot on the cell table.</figcaption>
+            <img class="fit-robot" src="/assets/photos/frame-01.jpg" alt="HEXKIT ACADEMY cobot standing on a grooved metal table, full arm from base to end effector." width="720" height="1280" />
+            <figcaption>The academy cobot on the cell table, base through end effector.</figcaption>
           </figure>
           <figure class="frame frame-b">
-            <img src="/assets/photos/frame-03.jpg" alt="HEXKIT ACADEMY cobot with the arm folded over the table, from the demo video." width="720" height="1280" />
+            <img class="fit-robot" src="/assets/photos/frame-03.jpg" alt="HEXKIT ACADEMY cobot with the arm folded, full arm in frame." width="720" height="1280" />
             <figcaption>Same cobot, another pose from the demo.</figcaption>
           </figure>
           <figure class="frame frame-c">
-            <!-- Alex: stock stand-in. Replace with a consented photo of HEXKIT ACADEMY students at the cobot. -->
-            <img src="https://images.pexels.com/photos/8613089/pexels-photo-8613089.jpeg?auto=compress&cs=tinysrgb&w=1400" alt="Stock photo of students in safety glasses gathered around a small robot arm. Not a HEXKIT ACADEMY session." width="1400" height="933" />
-            <figcaption>Stock photo. Alex: swap for students in your workshop.</figcaption>
+            <!-- Alex: stock stand-in, ages 13-16. Replace with a consented photo of HEXKIT ACADEMY students at the cobot. -->
+            <img src="https://images.pexels.com/photos/8613089/pexels-photo-8613089.jpeg?auto=compress&cs=tinysrgb&w=1400" alt="Stock photo of teenagers about 13 to 16 in safety glasses around a small robot arm. Not a HEXKIT ACADEMY session." width="1400" height="933" />
+            <figcaption>Stock photo, ages 13-16. Alex: swap for students in your workshop.</figcaption>
           </figure>
         </div>
         <div class="why-copy">
@@ -115,32 +116,47 @@
           <div>
             <p class="index-no">02</p>
             <h2>A day in the lab</h2>
-            <p class="intro">Stills from the HEXKIT ACADEMY cobot demo. The clip is the arm only. Weekend sessions are still coming soon, and student photos on this page are stock until workshop shots exist.</p>
+            <p class="intro">Live motion from the HEXKIT ACADEMY cobot. Jump to Reach, Pose, Over the table, or Set down. The clip is the arm only. Weekend sessions are still coming soon, and student photos on this page are stock until workshop shots exist.</p>
           </div>
-          <p class="hint">Scroll sideways</p>
         </div>
-        <div class="day-strip" tabindex="0" aria-label="Photo strip of workshop moments">
-          <figure class="frame">
-            <img src="/assets/photos/frame-02.jpg" alt="HEXKIT ACADEMY cobot reaching across the table, demo still." width="720" height="1280" />
-            <figcaption><strong>Reach</strong><span>Demo still. Motion on a real 6-axis cobot.</span></figcaption>
+        <div class="motion">
+          <figure class="motion-player">
+            <video
+              id="cobot-motion"
+              src="/assets/video/cobot-demo.mp4"
+              poster="/assets/photos/frame-01.jpg"
+              muted
+              loop
+              playsinline
+              autoplay
+              preload="metadata"
+              aria-label="Live motion of the HEXKIT ACADEMY cobot, base through end effector"
+            ></video>
+            <figcaption>Live motion from the academy cobot.</figcaption>
           </figure>
-          <figure class="frame">
-            <img src="/assets/photos/frame-04.jpg" alt="HEXKIT ACADEMY cobot with the upper arm raised, demo still." width="720" height="1280" />
-            <figcaption><strong>Pose</strong><span>Demo still. Students will jog poses like this on the teach pendant.</span></figcaption>
-          </figure>
-          <figure class="frame">
-            <img src="/assets/photos/frame-06.jpg" alt="HEXKIT ACADEMY cobot folded over the metal table, demo still." width="720" height="1280" />
-            <figcaption><strong>Over the table</strong><span>Demo still. Tooling and workflow happen at the cell, not on a laptop.</span></figcaption>
-          </figure>
-          <figure class="frame">
-            <img src="/assets/photos/frame-08.jpg" alt="HEXKIT ACADEMY cobot lowered toward the table, demo still." width="720" height="1280" />
-            <figcaption><strong>Set down</strong><span>Demo still. The personal program and demo video come from work like this.</span></figcaption>
-          </figure>
-          <figure class="frame">
-            <!-- Alex: stock stand-in for the student side of the day. Replace with a consented workshop photo. -->
-            <img src="https://images.pexels.com/photos/5212317/pexels-photo-5212317.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Stock photo of teenagers building a hands-on project together. Not a HEXKIT ACADEMY session." width="1200" height="800" />
-            <figcaption><strong>Students</strong><span>Stock photo. Alex: this frame is where a real workshop group should go.</span></figcaption>
-          </figure>
+          <div class="chapter-list" role="list" aria-label="Moments in the cobot demo">
+            <button class="chapter" type="button" data-seek="3" aria-pressed="false">
+              <strong>Reach</strong>
+              <span>Motion on a real 6-axis cobot.</span>
+            </button>
+            <button class="chapter" type="button" data-seek="0.4" aria-pressed="false">
+              <strong>Pose</strong>
+              <span>Students will jog poses like this on the teach pendant.</span>
+            </button>
+            <button class="chapter" type="button" data-seek="8" aria-pressed="false">
+              <strong>Over the table</strong>
+              <span>Tooling and workflow happen at the cell, not on a laptop.</span>
+            </button>
+            <button class="chapter" type="button" data-seek="14" aria-pressed="false">
+              <strong>Set down</strong>
+              <span>The personal program and demo video come from work like this.</span>
+            </button>
+            <figure class="chapter chapter-students" role="listitem">
+              <!-- Alex: stock stand-in, ages 13-16. Replace with a consented HEXKIT ACADEMY workshop group. -->
+              <img src="https://images.pexels.com/photos/7743257/pexels-photo-7743257.jpeg?auto=compress&cs=tinysrgb&w=1400" alt="Stock photo of teenagers about 13 to 16 planning a robot together. Not a HEXKIT ACADEMY session." width="1400" height="933" />
+              <figcaption><strong>Students</strong><span>Stock photo, ages 13-16. Alex: this frame is where a real workshop group should go.</span></figcaption>
+            </figure>
+          </div>
         </div>
       </div>
     </section>
@@ -154,7 +170,8 @@
         </div>
         <div class="ba" data-compare>
           <!-- Alex: left side stays a stock coding-camp contrast unless you have a photo you want here. -->
-          <img class="ba-before" src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&w=1600&q=75" alt="Stock photo of students working on laptops in a classroom." width="1600" height="1000" />
+          <!-- Alex: stock coding-camp contrast, ages 13-16. Not a HEXKIT ACADEMY photo. -->
+          <img class="ba-before" src="https://images.pexels.com/photos/5905483/pexels-photo-5905483.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Stock photo of teenagers about 13 to 16 working on laptops." width="1600" height="1066" />
           <img class="ba-after" src="/assets/photos/cobot-hero.jpg" alt="HEXKIT ACADEMY cobot in a white showroom." width="1920" height="1920" />
           <p class="ba-tag ba-tag-left">Laptop</p>
           <p class="ba-tag ba-tag-right">Cell</p>
@@ -165,7 +182,8 @@
         <div class="compare-grid" style="margin-top:1.25rem">
           <article class="compare-card">
             <!-- Alex: stock coding-camp contrast. Not a HEXKIT ACADEMY photo. -->
-            <img src="https://images.pexels.com/photos/4145153/pexels-photo-4145153.jpeg?auto=compress&cs=tinysrgb&w=1400" alt="Stock photo of a student learning on a laptop." width="1400" height="933" />
+            <!-- Alex: stock coding-camp contrast, ages 13-16. Not a HEXKIT ACADEMY photo. -->
+            <img src="https://images.pexels.com/photos/5905483/pexels-photo-5905483.jpeg?auto=compress&cs=tinysrgb&w=1400" alt="Stock photo of teenagers about 13 to 16 working on laptops." width="1400" height="933" />
             <div>
               <h3>Coding camp</h3>
               <p class="compare-price">~$520-560</p>
@@ -179,7 +197,7 @@
             </div>
           </article>
           <article class="compare-card compare-card-accent">
-            <img src="/assets/photos/frame-05.jpg" alt="HEXKIT ACADEMY cobot on the demo table." width="720" height="1280" />
+            <img class="fit-robot" src="/assets/photos/frame-05.jpg" alt="HEXKIT ACADEMY cobot on the demo table, full arm in frame." width="720" height="1280" />
             <div>
               <h3>HEXKIT ACADEMY</h3>
               <p class="compare-price">$339 early bird · $449 regular</p>
@@ -236,7 +254,7 @@
             </div>
           </div>
           <figure class="frame">
-            <img src="/assets/photos/frame-07.jpg" alt="HEXKIT ACADEMY cobot upright on the demo table." width="720" height="1280" />
+            <img class="fit-robot" src="/assets/photos/frame-07.jpg" alt="HEXKIT ACADEMY cobot upright on the demo table, full arm in frame." width="720" height="1280" />
             <figcaption>The cobot for a workshop of 6 students.</figcaption>
           </figure>
         </div>
@@ -251,7 +269,7 @@
           <p class="intro">We’re lining up weekend sessions with partner hosts in Orange County and Irvine. Join the waitlist and we’ll reach out when seats open.</p>
         </div>
         <div class="partner">
-          <img src="/assets/photos/frame-04.jpg" alt="HEXKIT ACADEMY cobot from the demo, used here while partner-host photos are not ready." width="720" height="1280" />
+          <img class="fit-robot" src="/assets/photos/frame-04.jpg" alt="HEXKIT ACADEMY cobot from the demo, full arm in frame, used here while partner-host photos are not ready." width="720" height="1280" />
           <div>
             <h3 style="font-family:var(--serif);font-weight:560;font-size:1.8rem;margin:0 0 0.4rem">Partner hosts</h3>
             <p class="intro">Sessions planned with community partners including <strong>Urban Workshop</strong>, <strong>theCoderSchool</strong>, and <strong>Ardent</strong>. Exact schedules will be shared with waitlist members first.</p>
@@ -270,31 +288,31 @@
         </div>
         <div class="curr-grid">
           <article>
-            <img src="/assets/photos/frame-06.jpg" alt="HEXKIT ACADEMY cobot, the machine students program." width="720" height="1280" />
+            <img class="fit-robot" src="/assets/photos/frame-06.jpg" alt="HEXKIT ACADEMY cobot, full arm in frame, the machine students program." width="720" height="1280" />
             <div>
               <h3>Program</h3>
               <p>Learn how cobots are programmed and tasked for real workshop jobs: motion, tooling, and workflow basics.</p>
             </div>
           </article>
           <article>
-            <!-- Alex: stock makerspace stand-in. Replace with a consented repair photo from the workshop. -->
-            <img src="https://images.pexels.com/photos/4484078/pexels-photo-4484078.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Stock photo of hands soldering on an electronics bench. Not a HEXKIT ACADEMY session." width="1200" height="800" />
+            <!-- Alex: stock makerspace stand-in, ages 13-16. Replace with a consented repair photo from the workshop. -->
+            <img src="https://images.pexels.com/photos/8364026/pexels-photo-8364026.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Stock photo of a teenager about 13 to 16 soldering at a bench. Not a HEXKIT ACADEMY session." width="1200" height="800" />
             <div>
               <h3>Repair and maintain</h3>
               <p>Hands-on hardware: inspect, diagnose, and care for real equipment the way a shop floor expects.</p>
             </div>
           </article>
           <article>
-            <!-- Alex: stock stand-in. Replace with HEXKIT ACADEMY students in safety glasses. -->
-            <img src="https://images.pexels.com/photos/8471831/pexels-photo-8471831.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Stock photo of students in safety glasses working around equipment. Not a HEXKIT ACADEMY session." width="1200" height="800" />
+            <!-- Alex: stock stand-in, ages 13-16. Replace with HEXKIT ACADEMY students in safety glasses. -->
+            <img src="https://images.pexels.com/photos/8471831/pexels-photo-8471831.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Stock photo of teenagers about 13 to 16 in safety glasses around equipment. Not a HEXKIT ACADEMY session." width="1200" height="800" />
             <div>
               <h3>Safety</h3>
               <p>Industrial safety habits first: guards, procedures, and respect for machines that can move force.</p>
             </div>
           </article>
           <article>
-            <!-- Alex: stock stand-in. Replace with HEXKIT ACADEMY students at the cell. -->
-            <img src="https://images.pexels.com/photos/8613318/pexels-photo-8613318.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Stock photo of a student in safety glasses beside a small robot. Not a HEXKIT ACADEMY session." width="1200" height="800" />
+            <!-- Alex: stock stand-in, ages 13-16. Replace with HEXKIT ACADEMY students at the cell. -->
+            <img src="https://images.pexels.com/photos/8613318/pexels-photo-8613318.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Stock photo of a teenager about 13 to 16 in safety glasses beside a small robot. Not a HEXKIT ACADEMY session." width="1200" height="800" />
             <div>
               <h3>Build judgment</h3>
               <p>More than coding drills: students leave with workshop confidence and a clearer path into STEM trades.</p>
@@ -353,8 +371,8 @@
         </div>
         <div class="waitlist-grid">
           <figure class="waitlist-photo">
-            <!-- Alex: stock stand-in beside the form. The media checkbox is not a photo release. Replace with a consented workshop photo. -->
-            <img src="https://images.pexels.com/photos/5212320/pexels-photo-5212320.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Stock photo of teenagers working together on a hands-on build. Not HEXKIT ACADEMY students." width="1200" height="1600" />
+            <!-- Alex: stock stand-in beside the form, ages 13-16. The media checkbox is not a photo release. Replace with a consented workshop photo. -->
+            <img src="https://images.pexels.com/photos/7868883/pexels-photo-7868883.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Stock photo of teenagers about 13 to 16 building a small robot together. Not HEXKIT ACADEMY students." width="1200" height="1600" />
             <figcaption>Stock photo. Alex: use a consented workshop photo later.</figcaption>
           </figure>
           <!-- Waitlist posts to Formspree form xljddqyd -->
