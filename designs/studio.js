@@ -1,4 +1,4 @@
-/* Studio preview: light parallax, photo compare, section highlight. */
+/* Studio preview: cobot chapter jumps, photo compare, section highlight. */
 (function () {
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   var ba = document.querySelector("[data-compare]");
