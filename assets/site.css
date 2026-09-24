@@ -529,8 +529,8 @@ button.chapter[aria-pressed="true"] {
 
 .ba-after {
   z-index: 0;
-  object-fit: contain;
-  background: #f4f5f0;
+  object-fit: cover;
+  object-position: center 45%;
 }
 
 .ba-before {
@@ -851,9 +851,9 @@ button.chapter[aria-pressed="true"] {
 
 .waitlist-photo img {
   width: 100%;
-  aspect-ratio: 3 / 2;
+  aspect-ratio: 3 / 4;
   object-fit: cover;
-  object-position: center 42%;
+  object-position: center 40%;
 }
 
 .waitlist-photo figcaption {
