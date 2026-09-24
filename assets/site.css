@@ -272,6 +272,7 @@ h1 {
   margin-bottom: 1.5rem;
 }
 
+.section-head h1,
 .section-head h2 {
   margin: 0;
   font-size: clamp(2rem, 5vw, 3.4rem);
@@ -364,6 +365,14 @@ img.fit-robot {
 .why-copy article p {
   margin: 0;
   color: var(--mid);
+}
+
+.compare-jump {
+  margin-top: 1.25rem;
+}
+
+.why-copy .compare-jump {
+  margin-top: 0.9rem;
 }
 
 .motion {
@@ -474,6 +483,7 @@ button.chapter[aria-pressed="true"] {
   padding: 1rem 1rem 1.15rem;
 }
 
+.compare-card h2,
 .compare-card h3 {
   margin: 0;
   font-family: var(--serif);
@@ -796,8 +806,18 @@ button.chapter[aria-pressed="true"] {
 
 .curr-grid img {
   width: 100%;
-  aspect-ratio: 16 / 10;
+  height: auto;
+  aspect-ratio: 9 / 16;
   object-fit: cover;
+  object-position: center 35%;
+}
+
+.curr-grid article:nth-child(3) img {
+  object-position: center 42%;
+}
+
+.curr-grid article:nth-child(4) img {
+  object-position: center 18%;
 }
 
 .curr-grid div {
@@ -851,9 +871,11 @@ button.chapter[aria-pressed="true"] {
 
 .waitlist-photo img {
   width: 100%;
-  aspect-ratio: 3 / 4;
+  height: auto;
+  max-height: none;
+  aspect-ratio: 2 / 3;
   object-fit: cover;
-  object-position: center 40%;
+  object-position: center 28%;
 }
 
 .waitlist-photo figcaption {

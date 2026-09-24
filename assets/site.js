@@ -135,7 +135,9 @@
   if (!("IntersectionObserver" in window)) return;
 
   var pairs = links.map(function (link) {
-    return { link: link, section: document.querySelector(link.getAttribute("href")) };
+    var href = link.getAttribute("href") || "";
+    var section = href.charAt(0) === "#" ? document.querySelector(href) : null;
+    return { link: link, section: section };
   }).filter(function (pair) {
     return pair.section;
   });
