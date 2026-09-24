@@ -961,18 +961,12 @@ textarea {
   box-shadow: 0 10px 30px rgba(26, 29, 33, 0.06);
 }
 
-.instructor-mark {
-  width: 4.5rem;
-  height: 4.5rem;
-  border-radius: 50%;
+.instructor-photo {
+  width: min(100%, 260px);
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center 12%;
   background: var(--ink);
-  color: var(--lime);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--serif);
-  font-size: 1.55rem;
-  letter-spacing: 0.02em;
 }
 
 .instructor h2 {
