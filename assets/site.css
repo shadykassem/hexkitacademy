@@ -951,6 +951,82 @@ textarea {
   font-weight: 700;
 }
 
+.instructor {
+  display: grid;
+  gap: 1rem;
+  align-items: center;
+  background: var(--white);
+  border: 1px solid var(--line);
+  padding: 1.15rem 1.15rem 1.25rem;
+  box-shadow: 0 10px 30px rgba(26, 29, 33, 0.06);
+}
+
+.instructor-mark {
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 50%;
+  background: var(--ink);
+  color: var(--lime);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--serif);
+  font-size: 1.55rem;
+  letter-spacing: 0.02em;
+}
+
+.instructor h2 {
+  margin: 0 0 0.4rem;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+}
+
+.instructor p {
+  margin: 0 0 0.7rem;
+  color: var(--mid);
+  max-width: 40rem;
+}
+
+.instructor a {
+  font-weight: 700;
+}
+
+.footer-contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1rem;
+  margin: 0.45rem 0;
+}
+
+.footer-contact a {
+  font-size: 1rem;
+}
+
+.thanks {
+  min-height: 70vh;
+  display: grid;
+  align-content: center;
+  padding: 3rem 0 4rem;
+}
+
+.thanks h1 {
+  font-size: clamp(2.2rem, 6vw, 4rem);
+}
+
+.thanks ol {
+  margin: 0 0 1.2rem;
+  padding-left: 1.2rem;
+  max-width: 36rem;
+  color: var(--mid);
+}
+
+.thanks li + li {
+  margin-top: 0.45rem;
+}
+
+.ba input[type="range"] {
+  touch-action: pan-y;
+}
+
 @media (min-width: 720px) {
   .header-inner {
     flex-direction: row;
@@ -998,8 +1074,14 @@ textarea {
   .price-layout,
   .family-calc,
   .partner,
-  .waitlist-grid {
+  .waitlist-grid,
+  .instructor {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .instructor {
+    grid-template-columns: auto 1fr;
+    padding: 1.4rem 1.5rem;
   }
 
   .ba {
