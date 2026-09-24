@@ -483,8 +483,10 @@ button.chapter[aria-pressed="true"] {
 
 .compare-card img {
   width: 100%;
-  aspect-ratio: 16 / 10;
+  height: auto;
+  aspect-ratio: 9 / 16;
   object-fit: cover;
+  object-position: center 40%;
 }
 
 .compare-card div {
