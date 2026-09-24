@@ -851,8 +851,9 @@ button.chapter[aria-pressed="true"] {
 
 .waitlist-photo img {
   width: 100%;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 3 / 2;
   object-fit: cover;
+  object-position: center 42%;
 }
 
 .waitlist-photo figcaption {
