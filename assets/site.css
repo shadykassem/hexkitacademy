@@ -253,9 +253,159 @@ h1 {
   border-color: var(--ink);
 }
 
-.btn-ghost:hover {
+.btn-ghost:hover,
+.btn-secondary:hover {
   background: var(--ink);
   color: var(--paper);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--ink);
+  border-color: var(--ink);
+}
+
+.hero-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.hero-ctas .btn {
+  max-width: 100%;
+}
+
+.mini-nav a.nav-cta {
+  min-height: 44px;
+  padding: 0.4rem 0.85rem;
+  border-bottom: 0;
+  border-radius: 999px;
+  letter-spacing: 0.08em;
+  color: var(--ink);
+  background: var(--lime);
+}
+
+.mini-nav a.nav-cta[aria-current="true"] {
+  border-bottom: 0;
+  color: var(--ink);
+}
+
+.field-help {
+  margin: 0.35rem 0 0;
+  color: var(--mid);
+  font-size: 0.82rem;
+}
+
+.included,
+.pay-steps {
+  margin: 0 0 1.25rem;
+  padding: 0;
+}
+
+.included {
+  list-style: none;
+}
+
+.included li,
+.pay-steps li {
+  padding: 0.55rem 0;
+  border-top: 1px solid var(--line);
+  color: var(--mid);
+}
+
+.pay-steps {
+  padding-left: 1.2rem;
+}
+
+.pay-steps li + li,
+.included li + li {
+  margin-top: 0;
+}
+
+.school-box {
+  margin-top: 1.4rem;
+  padding: 1rem 1.05rem;
+  background: var(--white);
+  border: 1px solid var(--line);
+}
+
+.school-box h2 {
+  margin: 0 0 0.4rem;
+  font-size: 1.45rem;
+}
+
+.policy h1 {
+  margin: 0 0 0.7rem;
+  font-size: clamp(2rem, 5vw, 3.4rem);
+}
+
+.policy h2 {
+  margin: 1.35rem 0 0.35rem;
+  font-size: 1.45rem;
+}
+
+.policy p,
+.policy li {
+  color: var(--mid);
+}
+
+.policy ul,
+.policy ol {
+  margin: 0.35rem 0 0;
+  padding-left: 1.15rem;
+}
+
+.policy li + li {
+  margin-top: 0.4rem;
+}
+
+.footer-inner {
+  width: min(100% - 1.25rem, 1180px);
+  margin-inline: auto;
+  display: grid;
+  gap: 0.45rem;
+}
+
+.footer-tag,
+.footer-fine {
+  margin: 0;
+}
+
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.15rem 0;
+}
+
+.footer-nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  text-decoration: none;
+}
+
+.footer-nav a + a::before {
+  content: "·";
+  margin: 0 0.55rem;
+  color: var(--mid);
+  font-weight: 400;
+}
+
+.sticky-cta {
+  display: none;
+}
+
+.sticky-cta-close {
+  flex: 0 0 auto;
+  min-width: 44px;
+  min-height: 44px;
+  border: 1px solid var(--line);
+  background: var(--white);
+  color: var(--ink);
+  font-size: 1.35rem;
+  line-height: 1;
+  cursor: pointer;
 }
 
 .btn-block {
@@ -1060,6 +1210,43 @@ textarea {
 
 .ba input[type="range"] {
   touch-action: pan-y;
+}
+
+@media (max-width: 640px) {
+  .sticky-cta:not([hidden]):not(.is-tucked) {
+    display: flex;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 40;
+    gap: 0.45rem;
+    align-items: center;
+    padding: 0.5rem 0.7rem calc(0.5rem + env(safe-area-inset-bottom));
+    background: var(--paper);
+    border-top: 1px solid var(--line);
+  }
+
+  .sticky-cta .btn {
+    flex: 1 1 auto;
+  }
+
+  body.has-sticky-cta {
+    padding-bottom: 4.75rem;
+  }
+}
+
+@media print {
+  .sticky-cta,
+  .mini-nav,
+  .site-header,
+  .skip-link {
+    display: none !important;
+  }
+
+  body.has-sticky-cta {
+    padding-bottom: 0;
+  }
 }
 
 @media (min-width: 720px) {

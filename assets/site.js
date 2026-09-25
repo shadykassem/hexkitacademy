@@ -15,9 +15,15 @@
 
   var video = document.getElementById("cobot-motion");
   var chips = Array.prototype.slice.call(document.querySelectorAll("[data-seek]"));
+  var narrow = window.matchMedia("(max-width: 640px)").matches;
   if (video) {
     video.muted = true;
     video.defaultMuted = true;
+    if (narrow) {
+      video.removeAttribute("autoplay");
+      video.autoplay = false;
+      video.pause();
+    }
     var sourceUrl = video.currentSrc || video.getAttribute("src");
     var ensureSeekable = function () {
       var end = video.seekable && video.seekable.length ? video.seekable.end(0) : 0;
@@ -28,7 +34,7 @@
         video.src = URL.createObjectURL(blob);
         video.addEventListener("loadedmetadata", function () {
           if (resumeAt > 0.2) video.currentTime = resumeAt;
-          if (!reduce) {
+          if (!reduce && !narrow) {
             var again = video.play();
             if (again && again.catch) again.catch(function () {});
           }
@@ -70,13 +76,49 @@
         mark(chip);
       });
     });
-    if (reduce) {
+    if (reduce || narrow) {
       video.removeAttribute("autoplay");
-      video.controls = true;
+      video.autoplay = false;
+      if (reduce) video.controls = true;
       video.pause();
     } else {
       var play = video.play();
       if (play && play.catch) play.catch(function () {});
+    }
+  }
+
+  var sticky = document.getElementById("sticky-cta");
+  if (sticky && narrow) {
+    var dismissed = false;
+    try { dismissed = sessionStorage.getItem("hexkit-sticky-cta") === "off"; } catch (err) { dismissed = false; }
+    if (dismissed) {
+      sticky.hidden = true;
+    } else {
+      sticky.hidden = false;
+      document.body.classList.add("has-sticky-cta");
+    }
+    var closeSticky = sticky.querySelector(".sticky-cta-close");
+    if (closeSticky) {
+      closeSticky.addEventListener("click", function () {
+        sticky.hidden = true;
+        sticky.classList.remove("is-tucked");
+        document.body.classList.remove("has-sticky-cta");
+        try { sessionStorage.setItem("hexkit-sticky-cta", "off"); } catch (err) {}
+      });
+    }
+    var tuckTargets = [document.querySelector("#waitlist button[type=submit]"), document.querySelector(".site-footer")].filter(Boolean);
+    if (!dismissed && tuckTargets.length && "IntersectionObserver" in window) {
+      var tucked = new Set();
+      var tuck = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) tucked.add(entry.target);
+          else tucked.delete(entry.target);
+        });
+        var hide = tucked.size > 0;
+        sticky.classList.toggle("is-tucked", hide);
+        document.body.classList.toggle("has-sticky-cta", !hide && !sticky.hidden);
+      }, { threshold: 0.15 });
+      tuckTargets.forEach(function (target) { tuck.observe(target); });
     }
   }
 

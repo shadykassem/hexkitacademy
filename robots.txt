@@ -1,6 +1,5 @@
 User-agent: *
 Allow: /
 Disallow: /designs/
-Disallow: /thanks.html
 
 Sitemap: https://www.hexkitacademy.com/sitemap.xml

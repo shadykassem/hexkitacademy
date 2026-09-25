@@ -22,6 +22,36 @@
   <meta name="twitter:title" content="HEXKIT ACADEMY | Industrial Cobot Intro pricing" />
   <meta name="twitter:description" content="Early bird $339, regular $449, course value $990. Second student is $50 off with code SIBLING50." />
   <meta name="twitter:image" content="https://www.hexkitacademy.com/assets/og-home.jpg" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": "Industrial Cobot Intro",
+    "provider": {
+      "@type": "Organization",
+      "name": "HEXKIT ACADEMY",
+      "url": "https://www.hexkitacademy.com/"
+    },
+    "offers": [
+      {
+        "@type": "Offer",
+        "name": "Early bird",
+        "price": "339",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/LimitedAvailability",
+        "url": "https://www.hexkitacademy.com/pricing.html"
+      },
+      {
+        "@type": "Offer",
+        "name": "Regular",
+        "price": "449",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/LimitedAvailability",
+        "url": "https://www.hexkitacademy.com/pricing.html"
+      }
+    ]
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,620&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -40,10 +70,11 @@
           <a href="/#day">The day</a>
           <a href="/#instructor">Instructor</a>
           <a href="/compare.html">Compare</a>
+          <a href="/curriculum.html">What students learn</a>
           <a href="/pricing.html" aria-current="page">Pricing</a>
           <a href="/#workshops">Workshops</a>
           <a href="/#faq">FAQ</a>
-          <a href="/#waitlist">Waitlist</a>
+          <a class="btn btn-primary nav-cta" href="/#waitlist">Waitlist</a>
         </nav>
       </div>
     </header>
@@ -56,7 +87,19 @@
           <p class="kicker">HEXKIT ACADEMY</p>
           <h1>Industrial Cobot Intro</h1>
           <p class="intro">Course value framed at $990. Parents pay $339 early bird, then $449 regular. Sibling discount: $50 off the second sibling. Promo code on Stripe: <strong>SIBLING50</strong>.</p>
+          <p class="fine">*Based on comparable multi-day industrial robotics programs for teens. Final pricing is as published on this page.</p>
+          <!-- OWNER TODO: confirm the $990 basis against real comparable programs, or remove the $990 anchor -->
         </div>
+        <h2>What's included in every seat</h2>
+        <ul class="included">
+          <li>Full workshop on a real Fairino 6-axis cobot cell (max 6 students)</li>
+          <li>Teach pendant time for every student. No watching from the back</li>
+          <li>Safety briefing and drills before anyone touches the arm</li>
+          <li>Your teen's own robot program files and demo video to take home</li>
+          <li>Certificate of completion for their portfolio</li>
+          <li>All equipment and materials provided</li>
+        </ul>
+        <!-- OWNER TODO: add session length (hours/days) and schedule format here once confirmed -->
         <div class="family-calc" data-calculator>
           <div>
             <p class="kicker">Family calculator</p>
@@ -80,6 +123,15 @@
             <div class="total"><dt>Estimated total</dt><dd data-out="total">$339</dd></div>
           </dl>
         </div>
+        <h2>How payment works</h2>
+        <ol class="pay-steps">
+          <li>Join the waitlist (free).</li>
+          <li>Download, sign, and email the workshop waiver.</li>
+          <li>We email your Stripe payment link after your waiver is confirmed.</li>
+          <li>Pay $339 early bird or $449 regular. A second sibling enters SIBLING50 on the Stripe page for $50 off.</li>
+        </ol>
+        <p>Prices in USD. Nothing is charged until your waiver is confirmed and you complete Stripe checkout.</p>
+        <p>Changed plans? Full refund 14 or more days before your session, 50% or a free transfer 7-13 days out. Full details: <a href="/refunds.html">Refund policy</a>.</p>
         <div class="price-layout">
           <div class="price-hero">
             <p class="kicker">Early bird</p>
@@ -93,6 +145,7 @@
               <span class="step-no" aria-hidden="true">1</span>
               <div>
                 <strong>Complete waiver</strong>
+                <!-- OWNER TODO: waiver PDF is still stamped DRAFT TEMPLATE and contains placeholder tokens. Finalize it with California counsel before the first paid class. Do not regenerate it here. -->
                 <p><a class="btn btn-primary" href="/assets/legal/Hexkit_Academy_Workshop_Waiver_SeriesOne.pdf" target="_blank" rel="noopener noreferrer">Download and print waiver</a></p>
                 <p class="fine">Print the PDF. Parent and student (12-18) initial and sign where marked. Email a clear photo or scan to <a href="mailto:waitlist@hexkitacademy.com?subject=Waiver%20-%20%5Bkid%20first%20name%5D%20-%20%5Bdate%5D">waitlist@hexkitacademy.com</a> with subject <strong>Waiver - [kid first name] - [date]</strong>. Keep a copy for your records.</p>
               </div>
@@ -123,12 +176,21 @@
   </main>
 
   <footer class="site-footer">
-    <div class="wrap">
+    <div class="footer-inner">
       <p class="footer-brand">HEXKIT ACADEMY</p>
-      <p class="footer-contact">
+      <p class="footer-tag">Hands-on builders. Real machines. Serious fun.</p>
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="/pricing.html">Pricing</a>
+        <a href="/compare.html">Compare</a>
+        <a href="/curriculum.html">What students learn</a>
+        <a href="/#faq">FAQ</a>
+        <a href="/privacy.html">Privacy</a>
+        <a href="/terms.html">Terms</a>
+        <a href="/refunds.html">Refunds</a>
         <a href="mailto:waitlist@hexkitacademy.com">waitlist@hexkitacademy.com</a>
-      </p>
-      <p>Orange County / Irvine</p>
+      </nav>
+      <p class="footer-fine">© 2026 Hexkit Academy · Orange County / Irvine, California</p>
+      <!-- OWNER TODO: add legal entity name (e.g. "Operated by ___ LLC") once confirmed -->
     </div>
   </footer>
   <script src="/assets/site.js"></script>
